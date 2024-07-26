@@ -4,10 +4,12 @@
     <div class="row">
       <div class="col-12">
         <nav class="main-nav">
+          @foreach ($data_setting as $row)
           <!-- ***** Logo Start ***** -->
           <a href="index.html" class="logo">
-            <img src="{{asset('public/images/logo.png')}}">
+            <img style="width:4cm; height:1cm;" src="{{asset($row->logo_header)}}">
           </a>
+          @endforeach
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
           <ul class="nav">

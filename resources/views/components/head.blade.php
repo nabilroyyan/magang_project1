@@ -7,7 +7,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<title>Onix Digital Marketing HTML5 Template</title>
+<title>PG Candi Baru</title>
+@foreach ($data_setting as $row)
+<link rel="icon" href="{{asset($row->logo_utama)}}" type="image/png">
+@endforeach
 
 <!-- Bootstrap core CSS -->
 <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">

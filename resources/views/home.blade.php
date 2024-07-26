@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +18,15 @@
   </div>-->
   @include('components.header');
 
-  <div class="main-banner" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="owl-carousel owl-banner">
+  
+<div class="main-banner" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="owl-carousel owl-banner">
+
               
                 @foreach($data_banner as $row)
                 <div class="item header-text">
@@ -42,7 +43,6 @@
                   </div>
                 </div>
                 @endforeach
-               
               </div>
             </div>
           </div>

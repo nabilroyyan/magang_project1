@@ -1,3 +1,4 @@
+@foreach ($data_setting as $row)       
 <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">
@@ -5,15 +6,16 @@
           <div class="section-heading">
             <h2>Feel free to <em>Contact</em> us via the <span>HTML form</span></h2>
             <div id="map">
-              <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                <iframe src="{{asset($row->maps)}}" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             </div>
             <div class="info">
-              <span><i class="fa fa-phone"></i> <a href="#">010-020-0340<br>090-080-0760</a></span>
-              <span><i class="fa fa-envelope"></i> <a href="#">info@company.com<br>mail@company.com</a></span>
+                <span><i class="fa fa-phone"></i>{{$row->hp}}<a href="#"><br>{{$row->hp}}</a></span>
+                <span><i class="fa fa-envelope"></i> <a href="#">{{$row->email}}<br>{{$row->email}}</a></span>
             </div>
-          </div>
         </div>
-        <div class="col-lg-5 align-self-center">
+    </div>
+    @endforeach
+    <div class="col-lg-5 align-self-center">
           <form id="contact" action="" method="get">
             <div class="row">
               <div class="col-lg-12">
@@ -59,6 +61,7 @@
   </div>
 
   <footer>
+    @foreach ($data_setting as $row)
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
@@ -66,12 +69,12 @@
             <div class="logo">
               <a href="#"><img src="{{asset('/public/images/logo.png')}}" alt="Onix Digital TemplateMo"></a>
             </div>
-            <a href="#">info@company.com</a>
+            <a href="#">{{$row->email}}</a>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="{{$row->fb}}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{$row->twitter}}"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="{{$row->be}}"><i class="fa fa-behance"></i></a></li>
+              <li><a href="{{$row->instagram}}"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>
@@ -109,13 +112,12 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved. 
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
+            <p>{{$row->copy_right}}
           </div>
         </div>
       </div>
     </div>
+    @endforeach
   </footer>
 
  <!-- Scripts -->
